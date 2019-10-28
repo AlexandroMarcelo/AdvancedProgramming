@@ -1,0 +1,30 @@
+How to view binary files in hexadecimal:
+
+xxd file
+xxd -b file     # Will show the bytes as binary numbers
+
+hexdump -C file
+
+
+Another option:
+    Install the program hexedit
+
+
+
+In  order to use this program, using manually created threads, you must have an image with extension .ppm (in binary or ascii form) and a filter with extension .txt, and a resulting file with extension .ppm:
+	The filter file: Must start with the height and width of the matrix, then the matrix. The matrix must be square (both sides equal), and the sides must be odd numbers greater than 1 (ex.: 3, 5, 7, 9, etc.).
+	Example:
+		3 3
+		-1 -1 -1
+		-1 8 -1
+		-1 -1 -1
+
+you open your terminal inside of the folder of this project and type make.
+
+Then you run the program as usual with the parameters, to take the image through the filter, an example:
+	time ./test_ppm -i HOT_Balloon_Trip.ppm -o result.ppm -f filter.txt 
+
+The meaning of the flags:
+	-i: input file, the input image as .ppm
+	-o: output file, where the filtered image going to store.
+	-f: filter file, where the matrix is
